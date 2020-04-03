@@ -12,8 +12,8 @@ export default ({ app }: { app: express.Application }) => {
 
     app.use(require('method-override')('X-HTTP-Method-Override'));
 
-    // Middleware that transforms the raw string of req.body into json
     app.use(bodyParser.json());
+
     // Load API routes
     app.use(config.api.prefix, routes());
 
